@@ -404,7 +404,7 @@ class NANONETSOCR():
             pages.append(result)
         return pages
     
-    def pdf_to_searchable_pdf(self, url, filename = 'did not give a filename', formatting = 'lines and spaces',space_size = 11, line_height = 50, line_threshold = 'high'):
+    def pdf_to_searchablepdf(self, url, filename = 'did not give a filename', formatting = 'lines and spaces',space_size = 11, line_height = 50, line_threshold = 'high'):
         texts = self.pdf_to_string(url, formatting = formatting, space_size = space_size, line_height = line_height, line_threshold = line_threshold)
         if filename == 'did not give a filename':
             filename = url + '.pdf'
