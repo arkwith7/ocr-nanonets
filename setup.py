@@ -12,11 +12,7 @@ setup(
   keywords = ['OCR', 'Text Extraction', 'Tesseract', 'Image to text', 'PDF to text', 'Image OCR', 'PDF OCR', 'Extract Table from PDF', 'Extract Table from image', 'Extract Table', 'Table Extraction', 'Extract Text from PDF', 'Extract Text from image', 'Extract Text'],   # Keywords that define your package best
   install_requires=[            # I get to this in a second
           'requests',
-          'json',
-          'textwrap',
           'fpdf',
-          'csv',
-          'sys',
           'warnings',
           'numpy',
           'pandas'
