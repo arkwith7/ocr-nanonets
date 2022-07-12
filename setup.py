@@ -4,7 +4,7 @@ setup(
   packages = ['ocr-nanonets'],   # Chose the same as "name"
   version = '0.1',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
-  description = 'Intellight text and table extraction OCR tool which uses Nanonets OCR Engine to provide solutions to read and extract plain text and tables from image or pdf files with state-of-the-art accuracy',   # Give a short description about your library
+  description = 'Intelligent text and table extraction OCR tool which uses Nanonets OCR Engine to provide solutions to read and extract plain text and tables from image or pdf files with state-of-the-art accuracy',   # Give a short description about your library
   author = 'Karan Kalra',                   # Type in your name
   author_email = 'karankalra97w@gmail.com',      # Type in your E-Mail
   url = 'https://app.nanonets.com/#/signup?&utm_source=wrapper',   # Provide either the link to your github or to your website
