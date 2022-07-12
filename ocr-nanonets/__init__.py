@@ -1,1 +1,1 @@
-from ocr-nanonets.nanonets-python-wrapper import NANONETSOCR
+from nanonets.ocr import NANONETSOCR
