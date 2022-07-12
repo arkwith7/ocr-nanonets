@@ -85,7 +85,8 @@ File - Local File Path / URL
 image_to_searchablepdf(file, filename = 'did not give a filename', formatting = 'lines and spaces',space_size = 11, line_height = 60, line_threshold = 'high')
 pdf_to_searchable_pdf(file, filename = 'did not give a filename', formatting = 'lines and spaces',space_size = 11, line_height = 50, line_threshold = 'high')
 ```
-**filename** is the name you want the output pdf file to have. If not specified, pdf file created will have ".csv" appended to "original file name" as file name.
+- **filename** is the name you want the output pdf file to have. If not specified, pdf file created will have ".csv" appended to "original file name" as file name.
+
 **formatting** can be - 
 - ```none``` (DEFAULT) : single space separated text with all formatting removed
 - ```lines``` and spaces : all formatting enabled
