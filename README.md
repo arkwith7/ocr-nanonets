@@ -46,14 +46,14 @@ image_to_string(file, formatting = 'none', space_size = 11, line_height = 60, li
 pdf_to_string(file, formatting = 'none', space_size = 11, line_height = 50, line_threshold = 'high')
 ```
 **formatting** can be - 
-- none (DEFAULT) : single space separated text with all formatting removed
-- lines and spaces : all formatting enabled
-- lines : single space separated text with different lines separated with newline character 
-- pages (ONLY FOR pdf_to_string) : list of page wise single space separated text with all formatting removed
+- ```none``` (DEFAULT) : single space separated text with all formatting removed
+- ```lines and spaces``` : all formatting enabled
+- ```lines``` : single space separated text with different lines separated with newline character 
+- ```pages``` (ONLY FOR pdf_to_string) : list of page wise single space separated text with all formatting removed
 
 **line_threshold** (OPTIONAL): works in ```lines``` and ```lines and spaces``` formatting mode, can be - 
-- high (DEFAULT) : high senstivity for line separation. if this is giving faulty output, switching to ```line_threshold = 'low'``` should fix this.
-- low : low senstivity for line separation. toggle to this if ```line_threshold = 'high'``` is giving faulty results.
+- ```high``` (DEFAULT) : high senstivity for line separation. if this is giving faulty output, switching to ```line_threshold = 'low'``` should fix this.
+- ```low``` : low senstivity for line separation. toggle to this if ```line_threshold = 'high'``` is giving faulty results.
 
 **space_size** (OPTIONAL): works for ```lines and spaces``` formatting mode. it helps to manually specify your definition of space character. a smaller value means that smaller and smaller horizontal gaps / empty spaces between text in your file will be detected as space characters and vice versa. default value is 11.
 
@@ -74,10 +74,10 @@ Multiple Table Extraction in one image / PDF is supported.
 image_to_csv(file, filename = , cell_width = 250, cell_height = 50, is_table=True)
 pdf_to_csv(file, filename = , cell_width = 750, cell_height = 150, is_table = True)
 ```
-**filename** is the name you want the output csv file to have. If not specified, csv file created will have ".csv" appended to "original file name" as file name.
-**is_table** (OPTIONAL): This is ```True``` by default. Keep ```is_table=True``` in all cases to get best results. ```is_table=False``` should only be used if result required is a mix of unstructured text and tabular data.
-**cell_width** (OPTIONAL): it helps to manually specify your definition of how much horizontal space in your file equals one cell width. default values in code snippets above.
-**cell_height** (OPTIONAL): it helps to manually specify your definition of how much vertical space in your file equals one cell height. default values in code snippets above.
+- **filename** is the name you want the output csv file to have. If not specified, csv file created will have ".csv" appended to "original file name" as file name.
+- **is_table** (OPTIONAL): This is ```True``` by default. Keep ```is_table=True``` in all cases to get best results. ```is_table=False``` should only be used if result required is a mix of unstructured text and tabular data.
+- **cell_width** (OPTIONAL): it helps to manually specify your definition of how much horizontal space in your file equals one cell width. default values in code snippets above.
+- **cell_height** (OPTIONAL): it helps to manually specify your definition of how much vertical space in your file equals one cell height. default values in code snippets above.
 
 ### 4.Convert to Searchable PDF
 File - Local File Path / URL
@@ -87,14 +87,14 @@ pdf_to_searchable_pdf(file, filename = 'did not give a filename', formatting = '
 ```
 **filename** is the name you want the output pdf file to have. If not specified, pdf file created will have ".csv" appended to "original file name" as file name.
 **formatting** can be - 
-- none (DEFAULT) : single space separated text with all formatting removed
-- lines and spaces : all formatting enabled
-- lines : single space separated text with different lines separated with newline character 
+- ```none``` (DEFAULT) : single space separated text with all formatting removed
+- ```lines``` and spaces : all formatting enabled
+- ```lines``` : single space separated text with different lines separated with newline character 
 - pages (ONLY FOR pdf_to_string) : list of page wise single space separated text with all formatting removed
 
 **line_threshold** (OPTIONAL): works in ```lines``` and ```lines and spaces``` formatting mode, can be - 
-- high (DEFAULT) : high senstivity for line separation. if this is giving faulty output, switching to ```line_threshold = 'low'``` should fix this.
-- low : low senstivity for line separation. toggle to this if ```line_threshold = 'high'``` is giving faulty results.
+- ```high``` (DEFAULT) : high senstivity for line separation. if this is giving faulty output, switching to ```line_threshold = 'low'``` should fix this.
+- ```low``` : low senstivity for line separation. toggle to this if ```line_threshold = 'high'``` is giving faulty results.
 
 **space_size** (OPTIONAL): works for ```lines and spaces``` formatting mode. it helps to manually specify your definition of space character. a smaller value means that smaller and smaller horizontal gaps / empty spaces between text in your file will be detected as space characters and vice versa. default value is 11.
 
