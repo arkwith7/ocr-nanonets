@@ -3,7 +3,6 @@ _The best intelligent OCR tool to read and process images and PDFs_
 
 [![N|Solid](https://i.postimg.cc/59ZZmyrt/Screenshot-2022-07-12-at-11-37-27-PM.png)](https://nanonets.com/?&utm_source=wrapper)
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 ocr-nanonets is an intelligent OCR and table extraction tool which reads plain text and tables from images / PDFs and gives multiple post-OCR formatting and file conversion options to fine-tune based on requirements.
 
