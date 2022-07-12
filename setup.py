@@ -13,7 +13,6 @@ setup(
   install_requires=[            # I get to this in a second
           'requests',
           'fpdf',
-          'warnings',
           'numpy',
           'pandas'
       ],
