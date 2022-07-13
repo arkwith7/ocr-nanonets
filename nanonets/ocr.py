@@ -165,7 +165,7 @@ class NANONETSOCR():
                 pdf.ln()
 
             for wrap in lines:
-                pdf.cell(0, fontsize_mm, wrap, ln=1)
+                pdf.multi_cell(0, fontsize_mm, wrap)
 
         pdf.output(filename, 'F')
         print(filename + ' created in current directory')
@@ -433,7 +433,7 @@ class NANONETSOCR():
                     pdf.ln()
 
                 for wrap in lines:
-                    pdf.cell(0, fontsize_mm, wrap, ln=1)
+                    pdf.multi_cell(0, fontsize_mm, wrap)
 
         pdf.output(filename, 'F')
         print(filename + ' created in current directory')
