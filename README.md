@@ -42,8 +42,8 @@ nanonets.convert_to_prediction('FILE')
 ### 2.Convert to String
 File - Local File Path / URL
 ```
-nanonets.image_to_string(file, formatting = 'none', space_size = 11, line_height = 60, line_threshold = 'high')
-nanonets.pdf_to_string(file, formatting = 'none', space_size = 11, line_height = 50, line_threshold = 'high')
+nanonets.image_to_string(file, formatting = 'none', space_size = 11, line_height = 60, line_threshold = 'low')
+nanonets.pdf_to_string(file, formatting = 'none', space_size = 11, line_height = 50, line_threshold = 'low')
 ```
 **formatting** can be - 
 - ```none``` (DEFAULT) : single space separated text with all formatting removed
@@ -52,8 +52,8 @@ nanonets.pdf_to_string(file, formatting = 'none', space_size = 11, line_height =
 - ```pages``` (ONLY FOR pdf_to_string) : list of page wise single space separated text with all formatting removed
 
 **line_threshold** (OPTIONAL): works in ```lines``` and ```lines and spaces``` formatting mode, can be - 
-- ```high``` (DEFAULT) : high senstivity for line separation. if this is giving faulty output, switching to ```line_threshold = 'low'``` should fix this.
-- ```low``` : low senstivity for line separation. toggle to this if ```line_threshold = 'high'``` is giving faulty results.
+- ```low``` (DEFAULT) : low senstivity for line separation. works for most cases.
+- ```high``` : high senstivity for line separation. this works better with diagrams and flowcharts.
 
 **space_size** (OPTIONAL): works for ```lines and spaces``` formatting mode. it helps to manually specify your definition of space character. a smaller value means that smaller and smaller horizontal gaps / empty spaces between text in your file will be detected as space characters and vice versa. default value is 11.
 
@@ -82,8 +82,8 @@ nanonets.pdf_to_csv(file, filename = , cell_width = 750, cell_height = 150, is_t
 ### 4.Convert to Searchable PDF
 File - Local File Path / URL
 ```
-nanonets.image_to_searchablepdf(file, filename = 'did not give a filename', formatting = 'lines and spaces',space_size = 11, line_height = 60, line_threshold = 'high')
-nanonets.pdf_to_searchablepdf(file, filename = 'did not give a filename', formatting = 'lines and spaces',space_size = 11, line_height = 50, line_threshold = 'high')
+nanonets.image_to_searchablepdf(file, filename = 'did not give a filename', formatting = 'lines and spaces',space_size = 11, line_height = 60, line_threshold = 'low')
+nanonets.pdf_to_searchablepdf(file, filename = 'did not give a filename', formatting = 'lines and spaces',space_size = 11, line_height = 50, line_threshold = 'low')
 ```
 - **filename** is the name you want the output pdf file to have. If not specified, pdf file created will have ".csv" appended to "original file name" as file name.
 
@@ -94,8 +94,8 @@ nanonets.pdf_to_searchablepdf(file, filename = 'did not give a filename', format
 - ```pages``` (ONLY FOR pdf_to_string) : list of page wise single space separated text with all formatting removed
 
 **line_threshold** (OPTIONAL): works in ```lines``` and ```lines and spaces``` formatting mode, can be - 
-- ```high``` (DEFAULT) : high senstivity for line separation. if this is giving faulty output, switching to ```line_threshold = 'low'``` should fix this.
-- ```low``` : low senstivity for line separation. toggle to this if ```line_threshold = 'high'``` is giving faulty results.
+- ```low``` (DEFAULT) : low senstivity for line separation. works for most cases.
+- ```high``` : high senstivity for line separation. this works better with diagrams and flowcharts.
 
 **space_size** (OPTIONAL): works for ```lines and spaces``` formatting mode. it helps to manually specify your definition of space character. a smaller value means that smaller and smaller horizontal gaps / empty spaces between text in your file will be detected as space characters and vice versa. default value is 11.
 
