@@ -232,7 +232,7 @@ class NANONETSOCR():
             
             i = 1
             
-            if not(len(response.json()["result"]) == 1 and len(response.json()["result"][0]["prediction"] ==1)):
+            if not(len(response.json()["result"]) == 1 and len(response.json()["result"][0]["prediction"]) ==1):
                 with open(filename, "w") as my_empty_csv:
                     pass
                 
@@ -508,7 +508,7 @@ class NANONETSOCR():
             
             i = 1
             
-            if not(len(response.json()["result"]) == 1 and len(response.json()["result"][0]["prediction"] ==1)):
+            if not(len(response.json()["result"]) == 1 and len(response.json()["result"][0]["prediction"]) ==1):
                 with open(filename, "w") as my_empty_csv:
                     pass
                 
