@@ -267,13 +267,13 @@ class NANONETSOCR():
                 maxrow = 0
                 maxcol = 0
 
-                for el in table['prediction'][0]['cells']:
+                for el in table['cells']:
                     maxrow = max(el['row'],maxrow)
                     maxcol = max(el['col'], maxcol)
 
                 df = pd.DataFrame(np.zeros([maxrow, maxcol])*np.nan)
 
-                for el in table['prediction'][0]['cells']:
+                for el in table['cells']:
                     row = el['row'] - 1
                     col = el['col'] - 1
                     df.iloc[row,col] = el['text']
@@ -543,13 +543,13 @@ class NANONETSOCR():
                 maxrow = 0
                 maxcol = 0
 
-                for el in table['prediction'][0]['cells']:
+                for el in table['cells']:
                     maxrow = max(el['row'],maxrow)
                     maxcol = max(el['col'], maxcol)
 
                 df = pd.DataFrame(np.zeros([maxrow, maxcol])*np.nan)
 
-                for el in table['prediction'][0]['cells']:
+                for el in table['cells']:
                     row = el['row'] - 1
                     col = el['col'] - 1
                     df.iloc[row,col] = el['text']
