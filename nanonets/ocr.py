@@ -38,7 +38,7 @@ class NANONETSOCR():
             response = requests.request("POST", url = self.endpoint, headers=headers, files=files, auth=requests.auth.HTTPBasicAuth(self.token, ''))
             return response.text
         
-    def image_to_string(self, url, formatting = 'none', space_size = 11, line_height = 60, line_threshold = 'high'):
+    def image_to_string(self, url, formatting = 'none', space_size = 11, line_height = 60, line_threshold = 'low'):
         if formatting == 'none':
             return json.loads(self.convert_to_prediction(url))['results'][0]['page_data'][0]['raw_text']
         if formatting == 'lines':
@@ -104,10 +104,10 @@ class NANONETSOCR():
 
                     else:
                         lines.append(line)
-                        while x['ymax'] - y2 > line_height:
+                        while x['ymax'] - y > line_height*2:
                             lines.append("")
                             spaces.append(0)
-                            y2 = y2 + line_height
+                            y = y + line_height
                         
                         line = x['text']
                         y = x['ymax']
@@ -281,7 +281,7 @@ class NANONETSOCR():
                 df.to_csv(filename,index=False, header=False)
                 print(filename + ' created in current directory')
             
-    def pdf_to_string(self, url, formatting = 'none', space_size = 11, line_height = 50, line_threshold = 'high'):
+    def pdf_to_string(self, url, formatting = 'none', space_size = 11, line_height = 50, line_threshold = 'low'):
         if formatting == 'none':
             result = ''
             for el in json.loads(self.convert_to_prediction(url))['results'][0]['page_data']:
@@ -364,10 +364,10 @@ class NANONETSOCR():
                             prev = x['xmax']
                         else:
                             lines.append(line)
-                            while x['ymax'] - y2 > line_height:
+                            while x['ymax'] - y > line_height*2:
                                 lines.append("")
                                 spaces.append(0)
-                                y2 = y2 + line_height
+                                y = y + line_height
                             
                             line = x['text']
                             y = x['ymax']
