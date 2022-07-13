@@ -140,7 +140,7 @@ class NANONETSOCR():
     def image_to_boxes(self, url):
         return json.loads(self.convert_to_prediction(url))['results'][0]['page_data'][0]['words']
         
-    def image_to_searchablepdf(self, url, filename = 'did not give a filename', formatting = 'lines and spaces',space_size = 11, line_height = 60, line_threshold = 'high'):
+    def image_to_searchablepdf(self, url, filename = 'did not give a filename', formatting = 'lines and spaces',space_size = 11, line_height = 60, line_threshold = 'low'):
         text = self.image_to_string(url, formatting = formatting, space_size = space_size, line_height = line_height, line_threshold = line_threshold)
         if filename == 'did not give a filename':
             filename = url + '.pdf'
@@ -404,7 +404,7 @@ class NANONETSOCR():
             pages.append(result)
         return pages
     
-    def pdf_to_searchablepdf(self, url, filename = 'did not give a filename', formatting = 'lines and spaces',space_size = 11, line_height = 50, line_threshold = 'high'):
+    def pdf_to_searchablepdf(self, url, filename = 'did not give a filename', formatting = 'lines and spaces',space_size = 11, line_height = 50, line_threshold = 'low'):
         texts = self.pdf_to_string(url, formatting = formatting, space_size = space_size, line_height = line_height, line_threshold = line_threshold)
         if filename == 'did not give a filename':
             filename = url + '.pdf'
