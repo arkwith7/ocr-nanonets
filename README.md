@@ -10,6 +10,10 @@ ocr-nanonets is an intelligent OCR and table extraction tool which reads plain t
 - great table extraction capabilities
 - get results as bounding boxes / line items / csv / searchable pdfs / strings.
 
+You can also check out our free online tools - 
+- [Image/PDF to Text Online](https://nanonets.com/image-to-text)     
+- [Image/PDF to CSV Online](https://nanonets.com/convert-pdf-to-csv) 
+
 ## Installation
 ocr-nanonets requires [Python 3](https://www.python.org/downloads/) to run.
 You can use pip to download the wrapper from terminal:
