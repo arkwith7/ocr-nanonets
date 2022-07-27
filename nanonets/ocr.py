@@ -26,7 +26,7 @@ class NANONETSOCR():
             self.token = token
             self.authentication = 1
         if response.status_code == 401:
-            print("Authentication Not Successful : Wrong API Key!\n\nGet your free API Key - \n1. Go to https://app.nanonets.com/#/signup?&utm_source=wrapper\n2. On your Nanonets account, Go to My Account -> API Keys. Generate your free API Key and copy it\n3. Use it to authenticate this Nanonets OCR Wrapper.")
+            print("Authentication Not Successful : Wrong API Key!\n\nGet your free API Key - \n1. Go to https://app.nanonets.com/#/signup?&utm_source=wrapper\n2. On your Nanonets account, Go to Account Info -> API Keys. Generate your free API Key and copy it\n3. Use it to authenticate this Nanonets OCR Wrapper.")
             sys.exit()
         
     def convert_to_prediction(self, url):
@@ -570,13 +570,15 @@ class NANONETSOCR():
             elif download == True:
                 if output_file_name == 'did not give a filename':
                     output_file_name = str(file_path) + '_tables.csv'
-                
-                if '.pdf' in file_path:
-                    self.pdf_to_csv(file_path, output_file_name)
-                else:
-                    self.image_to_csv(file_path, output_file_name)
+                url = "https://customerstaging.nanonets.com/textract/csvconvert"
+                payload={'conversion_type': 'table'}
+                files=[('image_file',(str(file_path),open(file_path,'rb'),'application/pdf'))]
+                headers = {'Authorization': 'dummy_api_key_frontend'}
+                response = requests.request("POST", url, headers=headers, data=payload, files=files)
+                a = response.json()
+                urllib.request.urlretrieve(a['result']['url'], output_file_name)
         else :
-            print("Authentication Not Successful : Wrong API Key!\n\nGet your free API Key - \n1. Go to https://app.nanonets.com/#/signup?&utm_source=wrapper\n2. On your Nanonets account, Go to My Account -> API Keys. Generate your free API Key and copy it\n3. Use it to authenticate this Nanonets OCR Wrapper.")
+            print("Authentication Not Successful : Wrong API Key!\n\nGet your free API Key - \n1. Go to https://app.nanonets.com/#/signup?&utm_source=wrapper\n2. On your Nanonets account, Go to Account Info -> API Keys. Generate your free API Key and copy it\n3. Use it to authenticate this Nanonets OCR Wrapper.")
             sys.exit()
             
     def searchable_pdf(self, file_path, output_file_name = 'did not give a filename'):
@@ -591,5 +593,5 @@ class NANONETSOCR():
             a = response.json()
             urllib.request.urlretrieve(a['result']['url'], output_file_name)
         else :
-            print("Authentication Not Successful : Wrong API Key!\n\nGet your free API Key - \n1. Go to https://app.nanonets.com/#/signup?&utm_source=wrapper\n2. On your Nanonets account, Go to My Account -> API Keys. Generate your free API Key and copy it\n3. Use it to authenticate this Nanonets OCR Wrapper.")
+            print("Authentication Not Successful : Wrong API Key!\n\nGet your free API Key - \n1. Go to https://app.nanonets.com/#/signup?&utm_source=wrapper\n2. On your Nanonets account, Go to Account Info -> API Keys. Generate your free API Key and copy it\n3. Use it to authenticate this Nanonets OCR Wrapper.")
             sys.exit()
